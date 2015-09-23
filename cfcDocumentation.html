@@ -1,0 +1,841 @@
+<html>
+<head>
+<title>Component BBCAPI</title>
+<style>
+body  {
+	font-family: verdana, arial, helvetica, sans-serif;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+table	{
+	font-size: 11px;
+	font-family: Verdana, arial, helvetica, sans-serif;
+	width: 90%;
+}
+
+th {
+	padding: 6px;
+	font-size: 12px;
+	background-color: #cccccc;
+}
+
+td {
+	padding: 6px;
+	background-color: #eeeeee;
+	vertical-align : top;
+}
+
+code {
+	color: #000099 ;
+}
+</style>
+
+</head>
+<body style="padding-bottom : 800px;">
+
+<font size="-2">BBCAPI.BBCAPI</font><br>
+<font size="+1"><b>Component BBCAPI
+</b></font>
+<br><br><br>
+<table>
+<tr><td>hierarchy:</td><td>
+<a href="/CFIDE/componentutils/cfcexplorer.cfc?method=getcfcinhtml&name=WEB-INF.cftags.component">WEB-INF.cftags.component</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BBCAPI.BBCAPI<br>
+</td></tr>
+<p>A CFC wrapper to get information and schedules for programmes on BBC tv and radio channels</p>
+
+<tr><td>properties:</td>
+	
+	
+	<br>
+
+	<td></td>
+</tr>
+
+<tr>
+<td>methods:</td>
+<td><a href="#method_channelList">channelList</a>, <a href="#method_getChannelInfo">getChannelInfo</a>, <a href="#method_getChannelLocations">getChannelLocations</a>, <a href="#method_getGenreList">getGenreList</a>, <a href="#method_getGenreMembers">getGenreMembers</a>, <a href="#method_getGroupInfo">getGroupInfo</a>, <a href="#method_getGroupList">getGroupList</a>, <a href="#method_getProgrammeInfo">getProgrammeInfo</a>, <a href="#method_getProgrammeLocations">getProgrammeLocations</a>, <a href="#method_getProgrammeSchedule">getProgrammeSchedule</a>, <a href="#method_groupMembersList">groupMembersList</a>, <a href="#method_init">init</a>, <a href="#method_xmlStrip">xmlStrip</a></td>
+</tr>
+</table>
+<font size="-2">* - private method</font>
+<br><br><table>
+<tr><th align="left" colspan="1">
+		<a name="method_channelList">channelList</a>
+		
+		</th></tr>
+	<tr><td>
+	
+	
+	
+	<code>
+
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>channelList</b>
+	
+	(
+ 		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	retrieves the list of channels available through the API<br><br>
+
+	
+	Output: enabled<br>
+	
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getChannelInfo">getChannelInfo</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>struct</i>
+	
+	<b>getChannelInfo</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		channelID
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets information on a specific channel<br><br>
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>channelID:</b>
+
+			string,
+			required,
+			channelID
+			- the unique id for a channel
+			<br>
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getChannelLocations">getChannelLocations</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>array</i>
+	
+	<b>getChannelLocations</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		channelID
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>channelID:</b>
+			string,
+			required,
+			channelID
+			- the unique id for a channel
+			<br>
+
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getGenreList">getGenreList</a>
+		
+		</th></tr>
+	<tr><td>
+	
+	
+	
+	<code>
+
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>getGenreList</b>
+	
+	(
+ 		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets a list of all available genres<br><br>
+
+	
+	Output: enabled<br>
+	
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getGenreMembers">getGenreMembers</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>getGenreMembers</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		genreID
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets all members of a specific genre<br><br>
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>genreID:</b>
+
+			string,
+			required,
+			genreID
+			- the unique id for a genre
+			<br>
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getGroupInfo">getGroupInfo</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>getGroupInfo</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		groupID
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets information for a specific group<br><br>
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>groupID:</b>
+
+			string,
+			required,
+			groupID
+			- the unique id for a group
+			<br>
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getGroupList">getGroupList</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>getGroupList</b>
+	
+	(
+ 		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets a list of all groups available within the API<br><br>
+
+	
+	Output: enabled<br>
+	
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getProgrammeInfo">getProgrammeInfo</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>getProgrammeInfo</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		programmeID
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets information for a specific programme<br><br>
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>programmeID:</b>
+
+			string,
+			required,
+			programmeID
+			- the unique id for a programme
+			<br>
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getProgrammeLocations">getProgrammeLocations</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>struct</i>
+	
+	<b>getProgrammeLocations</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		programmeID
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets details on programme locations<br><br>
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>programmeID:</b>
+
+			string,
+			required,
+			programmeID
+			- the unique id for a programme
+			<br>
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_getProgrammeSchedule">getProgrammeSchedule</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>getProgrammeSchedule</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		channelID,
+	
+		
+		<i>
+		
+		string
+		</i>
+		startDate="[runtime expression]",
+	
+		
+		<i>
+		
+		string
+		</i>
+		endDate="[runtime expression]",
+	
+		
+		<i>
+		
+		numeric
+		</i>
+
+		limit="50",
+	
+		
+		<i>
+		
+		string
+		</i>
+		detail="schedule"
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets the schedule for a specific channel<br><br>
+	
+	Output: enabled<br>
+
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>channelID:</b>
+			string,
+			required,
+			channelID
+			- the unique id for a channel
+			<br>
+		
+			
+			&nbsp;&nbsp; <b>startDate:</b>
+			string,
+			optional,
+			startDate
+			- the start date for the schedule search
+			<br>
+
+		
+			
+			&nbsp;&nbsp; <b>endDate:</b>
+			string,
+			optional,
+			endDate
+			- the end date for the schedule search
+			<br>
+		
+			
+			&nbsp;&nbsp; <b>limit:</b>
+			numeric,
+			optional,
+			limit
+			- the maximum results you want returned
+			<br>
+		
+			
+			&nbsp;&nbsp; <b>detail:</b>
+
+			string,
+			optional,
+			detail
+			- the level of detail returned
+			<br>
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_groupMembersList">groupMembersList</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>any</i>
+	
+	<b>groupMembersList</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		string
+		</i>
+
+		groupID
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	gets members of a specific group<br><br>
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+		
+			
+			&nbsp;&nbsp; <b>groupID:</b>
+
+			string,
+			required,
+			groupID
+			- the unique id for a group
+			<br>
+		
+	
+	
+	<br>
+	</td></tr>
+
+
+	
+	
+	
+	
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_init">init</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i>BBCAPI</i>
+	
+	<b>init</b>
+	
+	(
+ 		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	I am the constructor method.<br><br>
+
+	
+	Output: suppressed<br>
+	
+	
+	
+	<br>
+	</td></tr>
+	
+	<tr><th align="left" colspan="1">
+		<a name="method_xmlStrip">xmlStrip</a>
+		
+		</th></tr>
+	<tr><td>
+
+	
+	
+	
+	<code>
+	
+		<i>public</i>
+	
+	
+		<i><a href="/CFIDE/componentutils/cfcexplorer.cfc?method=getcfcinhtml&name=BBCAPI.xml">xml</a></i>
+	
+	<b>xmlStrip</b>
+	
+	(
+ 	
+		
+		<i>
+		required
+		<a href="/CFIDE/componentutils/cfcexplorer.cfc?method=getcfcinhtml&name=BBCAPI.xml">xml</a>
+
+		</i>
+		xmlIn
+		
+	)
+	</i>
+	</code>
+	<br><br>	
+	
+	
+	I help with stripping out tags and tidying up the returned XML<br><br>
+	
+	Output: enabled<br>
+	
+	
+	
+		Parameters:<br>
+
+		
+			
+			&nbsp;&nbsp; <b>xmlIn:</b>
+			<a href="/CFIDE/componentutils/cfcexplorer.cfc?method=getcfcinhtml&name=BBCAPI.xml">xml</a>,
+			required,
+			xmlIn
+			- the XML retrieved from the CFHTTP request
+			<br>
+
+	<br>
+	</td></tr>
+</table>
+</body>
+</html>
